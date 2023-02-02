@@ -63,7 +63,13 @@ export function TodoCreateForm() {
           }}
         />
         <br></br>
-        <input type="checkbox" defaultChecked={formState.completed} />
+        <input
+          onChange={(event) => {
+            setFormState({ ...formState, completed: event.target.checked });
+          }}
+          type="checkbox"
+          defaultChecked={formState.completed}
+        />
         <span>Completed ?</span>
         <br></br>
         <input type="submit" value="addTodo" />
